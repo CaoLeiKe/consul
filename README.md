@@ -2,13 +2,13 @@
 因项目配置文件过多且变更比较频繁，故通过脚本把key对应的value放入console中。
 ##配置文件的定义
 resources目录下develop.ini，通过写好的脚本执行加上参数可以直接放入console中
-##实现原理
+## 实现原理
 * 定义接口、定义方法`com.zd.configuration`
 * 使用注解在接口的方法上进行定义`@ConsulNameSpace、@ConsulKey`的url值
 * 通过动态代理的方式获取接口方法上的注解的url值，请求console的结果进行返回
 * 研究Spring源码，把动态代理注入到容器中，应用直接@Autowired即可
 
-##项目结构
+## 项目结构
 * `com.zd.configuration`定义地址
 * `com.zd.consul`进行实现
 * `com.zd.consul.methodProxy`动态代理实现方法
